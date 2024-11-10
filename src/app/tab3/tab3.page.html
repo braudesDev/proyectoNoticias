@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Tarjetas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,30 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Tarjetas</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Usamos *ngFor para iterar sobre las tarjetas -->
+  <ion-card *ngFor="let card of cards; let i = index">
+    <ion-card-header>
+      <!-- Imagen dinámica según la propiedad imagenUrl de cada card -->
+      <img [src]="card.imagenUrl" alt="imagen tarjeta">
+      <ion-card-title>{{ card.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ card.fecha | date: 'shortDate' }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ card.descripcion }}
+    </ion-card-content>
+
+    <ion-item>
+      <!-- Vinculamos el botón de eliminar con la función eliminarNoticia y le pasamos el índice -->
+      <ion-button (click)="eliminarNoticia(i)">
+        Eliminar noticia
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
 </ion-content>

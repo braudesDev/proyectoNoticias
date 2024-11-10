@@ -1,0 +1,109 @@
+/* Cabecera */
+ion-header {
+  --background: #121212; /* Fondo oscuro */
+  --color: #ffffff; /* Texto blanco */
+
+  ion-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: none;
+    color: #ffffff; /* Título en blanco */
+  }
+}
+
+/* Contenido principal */
+ion-content {
+  --background: #181818; /* Fondo aún más oscuro */
+  padding: 16px;
+}
+
+/* Tarjetas */
+ion-card {
+  background: #2c2c2c; /* Fondo gris oscuro para las tarjetas */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Efecto hover */
+  }
+
+  /* Cabecera de la tarjeta */
+  ion-card-header {
+    padding: 16px;
+    background: #2c2c2c; /* Fondo oscuro para la cabecera */
+
+    /* Imagen */
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Título */
+    ion-card-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ffffff; /* Título blanco */
+      margin-bottom: 6px;
+    }
+
+    /* Subtítulo */
+    ion-card-subtitle {
+      font-size: 14px;
+      color: #888888; /* Gris claro */
+    }
+  }
+
+  /* Contenido de la tarjeta */
+  ion-card-content {
+    font-size: 14px;
+    color: #dddddd; /* Gris muy claro */
+    line-height: 1.5;
+    padding: 12px;
+    background: #222222; /* Fondo más oscuro para el contenido */
+    border-radius: 6px;
+  }
+}
+
+/* Botón eliminar noticia */
+ion-item {
+  margin-top: 12px;
+
+  ion-button {
+    background-color: #369ef4; /* Rojo para eliminar */
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #d32f2f; /* Rojo más oscuro al pasar el ratón */
+    }
+
+    ion-icon {
+      margin-left: 8px;
+      font-size: 18px;
+    }
+  }
+}
+
+/* Diseño responsivo */
+@media screen and (max-width: 768px) {
+  ion-card {
+    margin: 8px 0;
+  }
+
+  ion-button {
+    width: 100%; /* El botón ocupará todo el ancho en pantallas pequeñas */
+  }
+}
